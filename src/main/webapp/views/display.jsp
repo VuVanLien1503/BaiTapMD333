@@ -7,7 +7,16 @@
 <body>
 <h1 style="margin-left: 500px">List Student</h1>
 <h3 style="margin-left: 600px"><a href="/student?action=create"> Create New Student</a></h3>
+<form action="/student?action=search" method="post">
+    <input type="text" name="search" placeholder="Enter Name">
+    <button>Search</button>
+</form>
 <div style="margin-left: 350px; margin-top: 50px">
+        <span>
+                        <c:if test="${message!=null}">
+                            ${message}
+                        </c:if>
+        </span>
     <table border="1" style="border-collapse: collapse">
         <tr>
             <th>STT</th>

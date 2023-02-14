@@ -7,8 +7,8 @@ import service.my_interface.ISearch;
 
 import java.util.List;
 
-public class StudentService implements ICrud<Student> , ISearch<Student> {
-    StudentDAO studentDAO=new StudentDAO();
+public class StudentService implements ICrud<Student>, ISearch<Student> {
+    StudentDAO studentDAO = new StudentDAO();
 
     @Override
     public List<Student> selectAll() {
@@ -17,17 +17,17 @@ public class StudentService implements ICrud<Student> , ISearch<Student> {
 
     @Override
     public void create(Student student) {
-
+            studentDAO.create(student);
     }
 
     @Override
     public void delete(int id) {
-
+        studentDAO.delete(id);
     }
 
     @Override
     public void update(Student student) {
-
+        studentDAO.update(student);
     }
 
 
@@ -38,6 +38,8 @@ public class StudentService implements ICrud<Student> , ISearch<Student> {
 
     @Override
     public List<Student> findByName(String name) {
-        return null;
+      return   studentDAO.findByName(name);
     }
+
+
 }
